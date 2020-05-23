@@ -1,7 +1,7 @@
 package starprint;
 
 public class StarPrint {
-	//별 그리기
+	
 	public static void main(String[] args) {
 		int lineCount = 5;
 		int spaceCount = lineCount/2+1;
