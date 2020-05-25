@@ -22,7 +22,7 @@ public class Amicable {
 	}
 	
 	//친화수 확인
-	public Map chk(int a) {
+	public Map<Integer, Integer> chk(int a) {
 		this.a = a;
 		for(int i = 1; i <= a; i++) {
 			for(int j = i+1; j <= a; j++) {
