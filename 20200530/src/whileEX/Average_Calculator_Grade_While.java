@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Average_Calculator_Grade_While {
-
+	// 점수별 학점 계산기
 	public static void main(String[] args) {
 		int[] key = new int[6];
 		Map <Integer, String> scores = new HashMap <Integer, String>(6);
