@@ -34,6 +34,7 @@ public class Mabangjin {
 	
 	// 순방향인지 역방향인지 체크하는 메소드
 	public static boolean chk(int x, int y, int a) {
+		// x, y 좌표가 순방향에 속하면 return true
 		if(x < a || x >= a*3) {
 			if(y < a || y >= a*3) {
 				return true;
