@@ -4,7 +4,7 @@ public class SecretMap {
 	public String[] make(int n, int[] arr1, int[] arr2) {
 		String[] answer = new String[n];
 		
-		for(int i = 0; i < 1; i++) {
+		for(int i = 0; i < n; i++) {
 			String binary1 = "";
 			String binary2 = "";
 			int j = 1;
@@ -22,32 +22,33 @@ public class SecretMap {
 			}
 			String revBin1 = new StringBuilder(binary1).reverse().toString();
 			String revBin2 = new StringBuilder(binary2).reverse().toString();
-			System.out.println(revBin1);
-			System.out.println(revBin2);
 			
 			for(int k = 0; k < n; k++) {
-				System.out.println(revBin1.charAt(k));
-				if(revBin1.charAt(k) == '1' || revBin2.charAt(k) == '1') {
-					answer[i] += "#";
-				} else if(revBin1.charAt(k) == '0' && revBin2.charAt(k) == '0') {
-					answer[i] = " ";
+				if(k == 0) {
+					if(revBin1.charAt(k) == '1' || revBin2.charAt(k) == '1') {
+						answer[i] = "#";
+					} else if(revBin1.charAt(k) == '0' && revBin2.charAt(k) == '0') {
+						answer[i] = " ";
+					}
+				} else {
+					if(revBin1.charAt(k) == '1' || revBin2.charAt(k) == '1') {
+						answer[i] += "#";
+					} else if(revBin1.charAt(k) == '0' && revBin2.charAt(k) == '0') {
+						answer[i] += " ";
+					}
 				}
-				System.out.print(answer[i]);
 			}
-			
+			System.out.println(answer[i]);
 		}
 		return answer;
 	}
 	
 	public static void main(String[] args) {
 		SecretMap map = new SecretMap();
+		int n = 5;
 		int[] arr1 = {9,20,28,18,11};
 		int[] arr2 = {30,1,21,17,28};
 		
-		String[] answer = map.make(5, arr1, arr2);
-		
-		for(int i = 0; i < answer.length; i++) {
-			System.out.println(answer[i]);
-		}
+		map.make(n, arr1, arr2);
 	}
 }
