@@ -6,11 +6,12 @@ public class MultiOfArr {
 		int[][] arrB = {{3,3},{3,3}};
 		int[][] multiArr = new int[arrA.length][arrB[0].length];
 		
-		for(int i = 0; i < multiArr.length; i++) {
-			for(int j = 0; j < multiArr[i].length; j++) {
-				System.out.print(multiArr[i][j]+"\t");
+		multiArr[0][0] = arrA[0][0]*arrB[0][0];
+		
+		for(int i = 0; i < arrA[0].length; i++) {
+			for(int j = 0; j < arrB.length; j++) {
+				
 			}
-			System.out.println();
 		}
 	}
 }
