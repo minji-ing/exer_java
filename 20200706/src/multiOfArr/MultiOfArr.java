@@ -10,6 +10,7 @@ public class MultiOfArr {
 		while(i < arrA.length) {
 			for(int z = 0; z < arrA[i].length; z++) {
 				for(int j = 0; j < arrB.length; j++) {
+					System.out.println(arrA[z][z]+","+arrB[j][z]);
 					multiArr[i][z] += arrA[z][j]*arrB[j][z];
 				}	
 			}
