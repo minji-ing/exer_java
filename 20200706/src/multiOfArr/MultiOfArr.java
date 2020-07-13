@@ -1,5 +1,5 @@
 package multiOfArr;
-// 행렬의 곱셈 구하기
+// 프로그래머스(행렬의 곱셈) 구하기
 public class MultiOfArr {
 	public static void main(String[] args) {
 		int[][] arrA = {{2,3,2},{4,2,4},{3,1,4}};
@@ -10,8 +10,8 @@ public class MultiOfArr {
 		while(i < arrA.length) {
 			for(int z = 0; z < arrA[i].length; z++) {
 				for(int j = 0; j < arrB.length; j++) {
-					System.out.println(arrA[z][z]+","+arrB[j][z]);
 					multiArr[i][z] += arrA[z][j]*arrB[j][z];
+					System.out.println(arrA[i][z]+","+arrB[j][z]+"/"+multiArr[i][z]+"\t");
 				}	
 			}
 			i++;
