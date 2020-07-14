@@ -8,8 +8,8 @@ public class MultiOfArr {
 		int i = 0; //arrA 행렬의 row 개수
 		
 		while(i < arrA.length) { //arrA 행렬의 row 개수만큼 loop
-			for(int z = 0; z < arrA[i].length; z++) { //arrA 행렬의 column 개수만큼 loop
-				for(int j = 0; j < arrB.length; j++) { //arrB 행렬의 row 개수만큼 loop
+			for(int z = 0; z < arrB[0].length; z++) { //arrA 행렬의 column 개수만큼 loop
+				for(int j = 0; j < arrA[0].length; j++) { //arrB 행렬의 row 개수만큼 loop
 					multiArr[i][z] += arrA[i][j]*arrB[j][z];
 				}	
 			}
