@@ -1,5 +1,5 @@
 package hIndex;
-
+// 프로그래머스 H_Index
 public class H_Index {
 	public static void main(String[] args) {
 		int[] citations = {3,0,1,6,5};
