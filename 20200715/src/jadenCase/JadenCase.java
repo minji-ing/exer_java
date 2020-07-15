@@ -12,7 +12,7 @@ public class JadenCase {
 	}
 	
 	public static void main(String[] args) {
-		String s = "3people unFollowed me";
+//		String s = "3people unFollowed me";
 		
 	}
 }
