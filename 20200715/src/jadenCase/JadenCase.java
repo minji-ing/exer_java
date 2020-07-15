@@ -6,9 +6,7 @@ public class JadenCase {
 		String answer = "";
 		
 		for(int i = 0; i < cutS.length; i++) {
-			if(cutS[i].charAt(0) < 65 || cutS[i].charAt(0) > 90) {
-				
-			}
+			// string 길이만큼 loop?
 		}
 		return answer;
 	}
