@@ -6,11 +6,17 @@ import java.util.Arrays;
 public class H_Index {
 	public static void main(String[] args) {
 		int[] citations = {3,0,1,6,5};
-		int midIdx = (citations.length/2);
-		
+		int answer = 0;
 		Arrays.sort(citations);
-		int answer = citations[midIdx];
 		
+		for(int i = 0; i < citations.length; i++) {
+			int h = citations.length - i;
+			
+			if(citations[i] >= h) {
+				answer = h;
+				break;
+			}
+		}
 		System.out.println(answer);
 	}
 }
