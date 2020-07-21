@@ -1,5 +1,5 @@
 package makeMaxNum;
-// 프로그래머스 큰 수 만들기
+// 프로그래머스 큰 수 만들기(탐욕법) - 수정필
 public class MakeMaxNum {
 	public static String make(String num, int k) {
 		String answer = "";
