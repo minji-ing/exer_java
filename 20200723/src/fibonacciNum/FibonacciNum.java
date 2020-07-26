@@ -1,34 +1,24 @@
 package fibonacciNum;
 
-import java.util.ArrayList;
-import java.util.List;
-
 // 프로그래머스 피보나치 수
 public class FibonacciNum {
 	public static void main(String[] args) {
-		int n = 31;
-		int answer = 0;
-		List<Integer> f = new ArrayList<Integer>();
-		int[] farr = new int[n+1];
-		farr[0] = 0;
-		farr[1] = 1;
-		f.add(0);
-		f.add(1);
+		int n = 31; // 피보나치 수의 순서
+		int answer = 0; // 결과값
 		
-//		if(n <= 2) {
-//			answer = 1;
-//		} else {
-//			for(int i = 0; i < f.size()-2; i++) {
-//				
-//			}
-//			
-//			long answer = f[n]/1234567;	
-//		}
-	
-		for(int i = 0; i < farr.length-2; i++) {
-			farr[i+2] = farr[i] + farr[i+1];
+		if(n <= 2) { // 피보나치 수가 2번째 이하일 경우 answer은 1반환
+			answer = 1;
+		} else {
+			int n1 = 0; // 0번째 피보나치 수
+			int n2 = 1; // 1번째 피보나치 수
+			
+			// 2번째부터 n번째까지 피보나치 수 계산 위한 loop. 모든 피보나치 수를 1234567로 나눈 나머지를 저장
+			for(int i = 2; i <= n; i++) {
+				answer = (n1 + n2) % 1234567;
+				n1 = n2 % 1234567;
+				n2 = answer % 1234567;
+			}
 		}
-		answer = farr[n]%1234567;
 		System.out.println(answer);
 	}
 }
