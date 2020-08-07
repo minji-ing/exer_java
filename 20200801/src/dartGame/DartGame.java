@@ -6,12 +6,16 @@ public class DartGame {
 		char[] cutStr = dartResult.toCharArray();
 		
 		for(int i = 1; i < cutStr.length; i++) {
+			int num = Character.getNumericValue(cutStr[i-1]);
+			
 			if(cutStr[i] == 'S') {
-				answer += cutStr[i-1];
+				answer += num;
 			} else if(cutStr[i] == 'D') {
-				answer += cutStr[i-1] * cutStr[i-1];
+				answer += num * num;
 			} else if(cutStr[i] == 'T') {
-				answer += cutStr[i-1] * cutStr[i-1] * cutStr[i-1];
+				answer += num * num * num;
+			} else if(cutStr[i] == '*') {
+				answer = answer * 2;
 			}
 		}
 		return answer;
