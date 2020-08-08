@@ -1,38 +1,43 @@
 package dartGame;
+
+import java.util.HashMap;
+import java.util.Map;
+
 // 프로그래머스 다트 게임
 public class DartGame {
 	public int dart(String dartResult) {
 		int answer = 0;
-		int[] tmp = new int[3];
-		int idx = 0;
-		char[] cutStr = dartResult.toCharArray();
+		Map<Integer, Integer> tmp = new HashMap<Integer, Integer>(3);
 		
-		for(int i = 1; i < cutStr.length; i++) {
-			int num = Character.getNumericValue(cutStr[i-1]);
+		for(int i = 0; i < dartResult.length(); i++) {
+			char dartChar = dartResult.charAt(i);
+			int dartInt = Character.getNumericValue(dartChar);
 			
-			if(i != 1 && 0 <= num && num >= 10) {
-				idx++;
-			}
-			
-			if(cutStr[i] == 'S') {
-				tmp[idx] = num;
-			} else if(cutStr[i] == 'D') {
-				tmp[idx] = num * num;
-			} else if(cutStr[i] == 'T') {
-				tmp[idx] = num * num * num;
-			} else if(cutStr[i] == '*') {
-				if(idx != 0) {
-					tmp[idx-1] = tmp[idx-1] * 2;
+			System.out.println(dartChar + " : " + dartInt);
+			if(0 <= dartInt && 9 >= dartInt) {
+				if(dartInt == 1 && dartResult.charAt(i+1) == '0') {
+					dartInt = 10;
 				}
-				tmp[idx] = tmp[idx] * 2;
-			} else {
-				tmp[idx] = tmp[idx] * (-1);
+				tmp.put(i, dartInt);
 			}
-			System.out.println(tmp[idx]);
+			
+//			else {
+//				int num = tmp.get(i-1);
+//				
+//				if(dartChar == 'S') {
+//					continue;
+//				} else if(dartChar == 'D') {
+//					tmp.put(i-1, num * num);
+//				} else if(dartChar == 'T') {
+//					tmp.put(i-1, num * num * num);
+//				} else {
+//					continue;
+//				}
+//			}
 		}
-		
-		for(int i = 0; i < tmp.length; i++) {
-			answer += tmp[i];
+		for(int i = 0; i < tmp.size(); i++)	{
+			
+			System.out.println(tmp.get(i));
 		}
 		
 		return answer;
@@ -44,6 +49,6 @@ public class DartGame {
 		
 		int answer = dart.dart(dartResult);
 		
-		System.out.println(answer);
+//		System.out.println(answer);
 	}
 }
