@@ -13,8 +13,9 @@ public class DartGame {
 			
 			// 실제 얻은 점수일 경우
 			if(0 <= dartInt && 9 >= dartInt && idx < 2) {
-				if(dartInt == 1 && dartResult.charAt(i+1) == '0') {
+				if(dartInt == 1 && dartResult.charAt(i+1) == '0') { // 점수가 10점일 경우
 					dartInt = 10;
+					i++;
 				}
 				idx++;
 				temp[idx] = dartInt;
@@ -26,8 +27,12 @@ public class DartGame {
 				} else if(dartChar == 'T') { // 얻은 점수에 3배수일 경우
 					temp[idx] = temp[idx] * temp[idx] * temp[idx];
 				} else if(dartChar == '*') { // 보너스로 현재와 그 이전 기회 점수에 2배 하기
-					for(int j = 0; j <= idx; j++) {
-						temp[j] = temp[j] * 2;
+					if(idx == 0) {
+						temp[idx] = temp[idx] * 2;
+					} else {
+						for(int j = idx; j >= idx-1; j--) {
+							temp[j] = temp[j] * 2;
+						}
 					}
 				} else if(dartChar == '#') { // 마이너스로 현재 점수에 -1 곱하기
 					temp[idx] = temp[idx] * (-1);
@@ -42,7 +47,7 @@ public class DartGame {
 	}
 	
 	public static void main(String[] args) {
-		String dartResult = "1S*2T*3S";
+		String dartResult = "0S10D3S";
 		DartGame dart = new DartGame();
 		
 		int answer = dart.dart(dartResult);
