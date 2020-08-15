@@ -3,6 +3,10 @@ package functionDevelop;
 public class FunctionDevelop {
 	public int[] make(int[] progress, int[] speed) {
 		int[] answer = {};
+		
+		for(int i = 0; i < progress.length; i++) {
+			int days = (int)Math.ceil((100 - progress[i]) / speed[i]);
+		}
 		return answer;
 	}
 	
