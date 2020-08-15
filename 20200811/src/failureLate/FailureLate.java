@@ -20,7 +20,7 @@ public class FailureLate {
 			idx.add(stagesStr.indexOf(Integer.toString(i)));
 		}
 		
-		return stages;
+		return answer;
 	}
 	
 	public static void main(String[] args) {
