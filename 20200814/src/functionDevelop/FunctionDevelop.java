@@ -4,7 +4,7 @@ public class FunctionDevelop {
 	public int[] make(int[] progress, int[] speed) {
 		int[] answer = {};
 		int[] days = new int[progress.length];
-		int count = 0;
+		String count = "";
 		
 		for(int i = 0; i < progress.length; i++) {
 			days[i] = (int)Math.ceil((double)(100 - progress[i]) / speed[i]);
@@ -13,15 +13,19 @@ public class FunctionDevelop {
 		
 		for(int i = 0; i < days.length-1; i++) {
 			if(days[i] < days[i+1]) {
-				continue;
+				count += "1";
 			} else {
 				for(int j = i+1; j < days.length; j++) {
 					if(days[i] < days[j]) {
-						
+						count += Integer.toString(j);
+					} else {
+						count += Integer.toString(days.length - i);
 					}
 				}
 			}
 		}
+		
+		System.out.println(count);
 		return answer;
 	}
 	
