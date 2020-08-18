@@ -15,7 +15,10 @@ public class FunctionDevelop {
 			if(days[i] < days[i+1]) {
 				count += "1";
 			} else {
-				for(int j = i+1; j < days.length; j++) {
+				if(days.length <= 3) {
+					
+				}
+				for(int j = i+2; j < days.length; j++) {
 					if(days[i] < days[j]) {
 						count += Integer.toString(j);
 					} else {
@@ -30,8 +33,8 @@ public class FunctionDevelop {
 	}
 	
 	public static void main(String[] args) {
-		int[] progress = {93, 30, 55};
-		int[] speed = {1, 30, 5};
+		int[] progress = {80, 15, 50};
+		int[] speed = {20, 15, 10};
 		
 		FunctionDevelop dev = new FunctionDevelop();
 		
