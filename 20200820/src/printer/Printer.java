@@ -5,4 +5,9 @@ public class Printer {
 		int answer = 0;
 		return answer;
 	}
+	
+	public static void main(String[] args) {
+		int[] priorities = {2,1,3,2};
+		int loc = 2;
+	}
 }
