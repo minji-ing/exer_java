@@ -5,4 +5,8 @@ public class MaxSquareFind {
 		int answer = 1234;
 		return answer;
 	}
+	
+	public static void main(String[] args) {
+		int[] board;
+	}
 }
