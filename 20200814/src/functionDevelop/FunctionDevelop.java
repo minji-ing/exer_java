@@ -33,8 +33,8 @@ public class FunctionDevelop {
 	}
 	
 	public static void main(String[] args) {
-		int[] progress = {80, 15, 50, 20};
-		int[] speed = {20, 15, 10, 20};
+		int[] progress = {80, 15, 50};
+		int[] speed = {20, 15, 10};
 		
 		FunctionDevelop dev = new FunctionDevelop();
 		
