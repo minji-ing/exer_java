@@ -1,14 +1,16 @@
 package functionDevelop;
+
+import java.util.Arrays;
+
 // 프로그래머스 기능 개발 (스택/큐)
 public class FunctionDevelop {
 	public int[] make(int[] progress, int[] speed) {
-		int[] answer = {};
 		int[] days = new int[progress.length];
 		String count = "";
 		
 		for(int i = 0; i < progress.length; i++) {
 			days[i] = (int)Math.ceil((double)(100 - progress[i]) / speed[i]);
-			System.out.println(days[i]);
+//			System.out.println(days[i]);
 		}
 		
 		for(int i = 0; i < days.length-1; i++) {
@@ -16,7 +18,7 @@ public class FunctionDevelop {
 				count += "1";
 			} else {
 				if(days.length <= 3) {
-					
+					count += "2";
 				}
 				for(int j = i+2; j < days.length; j++) {
 					if(days[i] < days[j]) {
@@ -28,7 +30,12 @@ public class FunctionDevelop {
 			}
 		}
 		
-		System.out.println(count);
+		int[] answer = new int[count.length()];
+		
+		for(int i = 0; i < answer.length; i++) {
+			answer[i] = Character.getNumericValue(count.charAt(i));
+			System.out.println(answer[i]);
+		}
 		return answer;
 	}
 	
@@ -40,6 +47,9 @@ public class FunctionDevelop {
 		
 		int[] answer = dev.make(progress, speed);
 		
-		System.out.println(answer);
+		for(int i = 0; i < answer.length; i++) {
+			System.out.print(answer[i] + "\t");
+		}
+		Arrays.toString(answer);
 	}
 }
