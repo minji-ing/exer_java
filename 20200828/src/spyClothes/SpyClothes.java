@@ -7,5 +7,6 @@ public class SpyClothes {
 	}
 	public static void main(String[] args) {
 		String[][] clothes = {{"yellow-hat", "headgear"}, {"blue-sunglasses", "eyewear"}};
+		SpyClothes spy = new SpyClothes();
 	}
 }
