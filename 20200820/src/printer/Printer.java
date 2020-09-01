@@ -7,18 +7,24 @@ public class Printer {
 		int num = 1;
 		
 		for(int i = 0; i < priorities.length; i++) {
-			if(priorities[i] < prioMax) {
-				
+			if(priorities[i] > prioMax) {
+				num++;
+			} else if(priorities[i] == prioMax && i > loc) {
+				num++;
+			} else if(i == loc || priorities[i] < prioMax) {
+				continue;
+			} else if(i < loc && priorities[i] == prioMax) {
+				continue;
 			}
 		}
-		
+		System.out.println(num);
 		
 		return answer;
 	}
 	
 	public static void main(String[] args) {
-		int[] priorities = {2,1,3,2};
-		int loc = 2;
+		int[] priorities = {1,1,9,1,1,1};
+		int loc = 0;
 		
 		Printer printer = new Printer();
 		int answer = printer.printer(priorities, loc);
