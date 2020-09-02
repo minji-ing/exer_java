@@ -4,7 +4,7 @@ public class Printer {
 	public int printer(int[] priorities, int loc) {
 		int answer = 0;
 		int prioMax = priorities[loc];
-		int num = 0;
+		int num = 1;
 		
 		for(int i = 0; i < priorities.length; i++) {
 			if(priorities[i] > prioMax) {
