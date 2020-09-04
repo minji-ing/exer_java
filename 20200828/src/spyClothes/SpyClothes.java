@@ -7,11 +7,14 @@ import java.util.Map;
 public class SpyClothes {
 	public int make(String[][] clothes) {
 		int answer = 0;
-		Map<Integer, String> kinds = new HashMap<Integer, String>();
+		Map<String, Integer> kinds = new HashMap<String, Integer>();
 		
 		for(int i = 0; i < clothes[0].length; i++) {
-			if(kinds.containsValue(clothes[i][1]) == false) {
-				kinds.put(i, clothes[i][1]);
+			if(kinds.containsKey(clothes[i][1]) == false) {
+				kinds.put(clothes[i][1], i);
+			} else {
+				int n = i - kinds.get(clothes[i][1]);
+				kinds.put(clothes[i][1], n);
 			}
 		}
 		System.out.println(kinds.toString());
