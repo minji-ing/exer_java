@@ -17,6 +17,7 @@ public class SpyClothes {
 				kinds.put(clothes[i][1], n);
 			}
 		}
+		
 		System.out.println(kinds.toString());
 		return answer;
 	}
