@@ -18,6 +18,9 @@ public class SpyClothes {
 			}
 		}
 		
+		for(int i = 0; i < kinds.size(); i++) {
+			
+		}
 		System.out.println(kinds.toString());
 		return answer;
 	}
