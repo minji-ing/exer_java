@@ -9,9 +9,12 @@ public class SpyClothes {
 		int answer = 0;
 		Map<String, Integer> kinds = new HashMap<String, Integer>();
 		
-		for(int i = 0; i < clothes[0].length; i++) {
+		for(int i = 0; i < clothes.length; i++) {
 			if(kinds.containsKey(clothes[i][1]) == false) {
 				kinds.put(clothes[i][1], i);
+			} else {
+				int n = i - kinds.get(clothes[i][1]);
+				kinds.put(clothes[i][1], n);
 			}
 		}
 		System.out.println(kinds.toString());
