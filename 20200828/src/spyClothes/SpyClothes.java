@@ -12,11 +12,13 @@ public class SpyClothes {
 		Map<String, Integer> kinds = new HashMap<String, Integer>();
 		
 		for(int i = 0; i < clothes.length; i++) {
+			int count  = 1;
+			
 			if(kinds.containsKey(clothes[i][1]) == false) {
-				kinds.put(clothes[i][1], i);
+				kinds.put(clothes[i][1], count);
 			} else {
-				int n = i - kinds.get(clothes[i][1]);
-				kinds.put(clothes[i][1], n);
+				count = kinds.get(clothes[i][1]) + 1;
+				kinds.put(clothes[i][1], count);
 			}
 		}
 		Set keySet = kinds.keySet();
@@ -36,7 +38,7 @@ public class SpyClothes {
 		return answer;
 	}
 	public static void main(String[] args) {
-		String[][] clothes = {{"yellow-hat", "headgear"}, {"blue-sunglasses", "eyewear"}, {"green-turban", "headgear"}};
+		String[][] clothes = {{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}};
 		SpyClothes spy = new SpyClothes();
 		int answer = spy.make(clothes);
 		System.out.println(answer);
