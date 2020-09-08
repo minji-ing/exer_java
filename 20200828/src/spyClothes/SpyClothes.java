@@ -1,7 +1,9 @@
 package spyClothes;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 // 프로그래머스 위장
 public class SpyClothes {
@@ -17,10 +19,19 @@ public class SpyClothes {
 				kinds.put(clothes[i][1], n);
 			}
 		}
+		Set keySet = kinds.keySet();
+		Iterator itr = keySet.iterator();
+		int setting = 1;
 		
 		for(int i = 0; i < kinds.size(); i++) {
-			
+			while(itr.hasNext()) {
+				String key = (String) itr.next();
+				answer += kinds.get(key);
+				setting = setting * kinds.get(key);
+			}
 		}
+		answer += setting;
+		
 		System.out.println(kinds.toString());
 		return answer;
 	}
